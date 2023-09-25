@@ -1,27 +1,33 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule} from  '@angular/common/http'
-import { AppRoutingModule } from './app-routing.module';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms'; // <--- JavaScript import from Angular
+
+
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ImageModalComponent } from './image-modal/image-modal.component';
-import {MatDialogModule} from '@angular/material/dialog'
+import { ItemDetailComponent } from './item-detail/item-detail.component';
+import { ItemSwitchComponents } from './item-switch.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    ImageModalComponent
+    ItemDetailComponent,
+    ItemSwitchComponents
   ],
+
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    MatDialogModule,
-   
-
+    FormsModule // <--- import into the NgModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/
