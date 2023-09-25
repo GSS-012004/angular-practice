@@ -1,0 +1,89 @@
+/* h1{
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: aqua;
+} */
+/* body {
+    background-image: url('https://img.pikbest.com/backgrounds/20190712/technology-hud-login-information-background_2848383.jpg!bw700');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+
+
+  } */
+
+
+  h1 {
+  color: aqua;
+  }
+.login-box {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 10 auto;
+    
+  }
+
+  
+
+  /* .radio{
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: right;
+  } */
+
+  .labels {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+  }
+
+  .inputs {
+    width: 100%;
+    padding: 4px;
+    margin-bottom: 10px;
+    border: 5px solid #ccc;
+    border-radius: 3px;
+  }
+
+  .login-box button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+  }
+
+  .login-box hr {
+    margin: 20px 0;
+  }
+
+  .login-box p {
+    text-align: center;
+  }
+
+  /* .login-box a img {
+    margin-right: 10px;
+  } */
+
+ /* .login-box input.radio-input {
+    vertical-align: middle;
+  } */
+  small{
+    font: optional;
+    color: red;
+}
+input.ng-invalid.ng-touched{
+ border: red 2px solid;
+}

@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TodosComponent } from './todos.component';
+import { RformsComponent } from './rforms.component';
 
-describe('TodosComponent', () => {
-  let component: TodosComponent;
-  let fixture: ComponentFixture<TodosComponent>;
+describe('RformsComponent', () => {
+  let component: RformsComponent;
+  let fixture: ComponentFixture<RformsComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [TodosComponent]
+      declarations: [RformsComponent]
     });
-    fixture = TestBed.createComponent(TodosComponent);
+    fixture = TestBed.createComponent(RformsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
