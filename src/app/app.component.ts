@@ -1,7 +1,5 @@
-import { HttpClient } from '@angular/common/http';
-import { Component,OnInit } from '@angular/core';
-import{MatDialog} from '@angular/material/dialog';
-import { ImageModalComponent } from './image-modal/image-modal.component';
+import { Component, OnInit } from '@angular/core';
+import { Item } from './item';
 
 @Component({
   selector: 'app-root',
@@ -9,53 +7,112 @@ import { ImageModalComponent } from './image-modal/image-modal.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'table';
-  //  public getJsonValue:any;
-  data:any[] = [];
-  ppe:any[] = [];
-constructor( private http :HttpClient ,public dialog: MatDialog){  }
 
-// ngOnInit():void {
-//   this.getMethod();
+  canSave =  true;
+  isSpecial = true;
+  isUnchanged = true;
 
-// }
+  isActive = true;
+  nullCustomer: string | null = null;
+  currentCustomer = {
+    name: 'Laura'
+  };
 
-//  public getMethod(){
-//   this.http.get('http://192.168.1.77:7000/live_data1').subscribe((data) => {
-//     console.log (data);
-//     this.getJsonValue = data;
-//   });
-// }
+  item!: Item; // defined to demonstrate template context precedence
+  items: Item[] = [];
+
+  currentItem!:Item;
 
 
-// ngOnInit(): void {
-//   this.http.get('http://192.168.1.77:7000/live_data1').subscribe((response:{"message":"data not found","success":false}) => {
-//     this.data = response;
-//   });
-// }
 
-ngOnInit(): void {
-  this.http.get('http://192.168.1.77:7000/get_ra_camera_details').subscribe((response :any) => {
-  //  console.log(this.data = response.message);
-   this.data = response.message;
-   
-  });
+  // trackBy change counting
+  itemsNoTrackByCount   = 0;
+  itemsWithTrackByCount = 0;
+  itemsWithTrackByCountReset = 0;
+  itemIdIncrement = 1;
+
+  currentClasses: Record<string, boolean> = {};
+
+  currentStyles: Record<string, string> = {};
+
+  ngOnInit() {
+    this.resetItems();
+    this.setCurrentClasses();
+    this.setCurrentStyles();
+    this.itemsNoTrackByCount = 0;
+  }
+
+  setUppercaseName(name: string) {
+    this.currentItem.name = name.toUpperCase();
+  }
+
+  setCurrentClasses() {
+    // CSS classes: added/removed per current state of component properties
+    this.currentClasses =  {
+      saveable: this.canSave,
+      modified: !this.isUnchanged,
+      special:  this.isSpecial
+    };
+  }
+
+  setCurrentStyles() {
+    // CSS styles: set per current state of component properties
+    this.currentStyles = {
+      'font-style':  this.canSave      ? 'italic' : 'normal',
+      'font-weight': !this.isUnchanged ? 'bold'   : 'normal',
+      'font-size':   this.isSpecial    ? '24px'   : '12px'
+    };
+  }
+
+  isActiveToggle() {
+    this.isActive = !this.isActive;
+  }
+
+  giveNullCustomerValue() {
+    this.nullCustomer = 'Kelly';
+  }
+
+  resetItems() {
+    this.items = Item.items.map(item => item.clone());
+    this.currentItem = this.items[0];
+    this.item = this.currentItem;
+  }
+
+  resetList() {
+    this.resetItems();
+    this.itemsWithTrackByCountReset = 0;
+    this.itemsNoTrackByCount = ++this.itemsNoTrackByCount;
+  }
+
+  changeIds() {
+
+    this.items.forEach(i => i.id += 1 * this.itemIdIncrement);
+    this.itemsWithTrackByCountReset = -1;
+    this.itemsNoTrackByCount = ++this.itemsNoTrackByCount;
+    this.itemsWithTrackByCount = ++this.itemsWithTrackByCount;
+  }
+
+  clearTrackByCounts() {
+    this.resetItems();
+    this.itemsNoTrackByCount = 0;
+    this.itemsWithTrackByCount = 0;
+    this.itemIdIncrement = 1;
+  }
+  trackByItems(index: number, item: Item): number { return item.id; }
+
+  trackById(index: number, item: any): number { return item.id; }
+
+  getValue(event: Event): string {
+    return (event.target as HTMLInputElement).value;
+  }
 }
 
-image(){
-  this.http.get('http://192.168.1.77:7000/get_roi_image/JSW_DOLVI_2023_09_09_20_44_35_907239.jpg').subscribe((response:any) =>{
-    // console.log(this.image = response );
-    this.image = response;
-  })
-  
-}
-
-openImageDialog():void{
-  const dialogRef = this.dialog.open(ImageModalComponent,{ width :'400px'});
-}
 
 
 
 
-
-}
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/
