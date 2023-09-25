@@ -1,0 +1,143 @@
+<!-- <button type = button (click)="getMethod()">getMethod</button> -->
+<!-- <div class="mat-table-container mat-elevation-z8 mt-4"> -->
+ <table mat-table class="mat-elevation-z8">
+    <thead>
+        <tr>
+            <th>SNo</th>
+            <!-- <th>Id</th> -->
+            <th>AI Solution</th>
+            <th>Alarm enable</th>
+            <th>Alarm Ip Address</th>
+            <th>Alarm type</th>
+            <th>Analytics Status</th>
+            <th>Area</th>
+            <th>Camera Brand</th>
+            <th>Camera Ip</th>
+            <th>Camera Name</th>
+            <!-- <th>Coin Details</th> -->
+            <th>Cr Data</th>
+            <th>Deparatment</th>
+            <th> Captured Images</th>
+            <th>Plant</th>
+            <th>PPE Data</th>
+            <!-- <th>ROI Data</th> -->
+            <th>RTSP URL</th>
+            <!-- <th>TC Data</th> -->
+
+        </tr>
+    </thead>
+    <tbody>
+        
+         <tr *ngFor= "let item of data; let i = index"> 
+            <!-- <div *ngIf td=""? - :ng-component>
+            <ng-component>     -->
+            <td> {{i+1}}</td>
+            <!-- <td> {{item._id.$oid }}</td> -->
+            <td>
+                <div *ngFor = "let solution of item.ai_solution">
+                    {{ solution}}
+                </div>
+            </td>
+            <td> {{item.alarm_enable }}</td>
+            <td> {{item.alarm_ip_address }}</td>
+            <td> {{item.alarm_type }}</td>
+            <td> {{item.analytics_status }}</td>
+            <td> {{item.area }}</td>
+            <td> {{item.camera_brand }}</td>
+            <td> {{item.camera_ip }}</td>
+            <td> {{item.cameraname }}</td>
+            <!-- <td> {{item.coin_details }}</td> -->
+
+            <td>
+                <div *ngFor = "let cd  of  item.cr_data ">
+                    Area Name:{{cd.area_name|json}}<br><br>
+                    BB Box: {{cd.bb_box}}<br><br><br>
+                    <div *ngFor = "let do of cd.data_object">
+                        Class Name:{{ do.class_name}}<br>
+                        Max Count: {{ do.max_count}}<br>
+                        Min Count: {{ do.min_count}}<br><br>
+                    </div>
+                </div>
+            </td>
+
+            <td> {{item.department }}</td>
+            <!-- <td><button  (click)="image()"><img src = "http://192.168.1.77:7000/get_roi_image/JSW_DOLVI_2023_09_09_20_44_35_907239.jpg"  alt="image" name = "image"  width="100px"/></button></td> -->
+
+
+            <!-- <td><img src= "http://192.168.1.77:7000/get_roi_image/JSW_DOLVI_2023_09_09_20_44_35_907239.jpg"  alt="image" name = "image"  width="50%"/> {{item.imagename }}</td> -->
+
+
+            <td>
+                <button mat-button (click)="openImageDialog()">
+                  <img
+                    src="http://192.168.1.77:7000/get_roi_image/JSW_DOLVI_2023_09_09_20_44_35_907239.jpg"
+                    alt="image"
+                    name="image"
+                    width="100px"
+                  />
+                </button>
+              </td>
+              
+            <td> {{item.plant }}</td>
+            <td>
+                <div *ngFor = "let pd of item.ppe_data ; let in = index">
+                     Helmet:{{pd.helmet}}<br> 
+                     Vest: {{pd.vest}} 
+                </div>
+            </td>
+
+            <!-- <td>
+                <div *ngFor = "let rd of item.roi_data">
+                    BB_Box:{{ rd.bb_box}}<br> 
+                    Label Name:{{ rd.label_name}}<br>
+                    ROI Id:{{ rd.roi_id}}<br> 
+                    ROI Name:{{rd.roi_name}} 
+                </div>
+            </td> -->
+
+            <td> {{item.rtsp_url }}</td>
+            <!-- <td> 
+                <div *ngFor = "let td of item.tc_data">
+                    Area Name:{{td.area_name}}<br>
+                    Class Name: {{ td.class_name}}<br> -->
+                    <!-- <div *ngFor = "let lb of td.line_bbox">
+                        Line bbox: {{lb.arrow}} 
+                    </div><br> -->
+                    <!-- Line bbox:<br>
+                    arrow:{{ td.line_bbox.arrow}}<br>
+                    line:{{ td.line_bbox.line}}<br>
+                    ROI Id : {{ td.roi_id}}<br>
+                </div>
+            </td> -->
+            <!-- </ng-component> -->
+        <!-- </div> -->
+        </tr> 
+
+        <!-- <div id="lightbox" class="lightbox">
+            <span class="close-button" id="closeButton">&times;</span>
+            <div class="lightbox-content">
+              <img src="" alt="Lightbox Image" class="lightbox-image">
+              <span class="prev" id="prevButton">&#10094;</span>
+              <span class="next" id="nextButton">&#10095;</span>
+            </div>
+          </div> -->
+            
+
+           <!-- <td>{{ item.analyticstype |json}}</td> -->
+        
+           <!-- <tr>
+            <td>
+                {{ data.SNo |json}}
+            </td>
+            <td>
+                {{ data.anlyticstype |json}}
+            </td>
+           </tr> -->
+
+    </tbody>
+</table> 
+<!-- </div> -->
+
+
+
+<!-- <p>{{ getJsonValue | json}}</p> -->
