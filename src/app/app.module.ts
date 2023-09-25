@@ -1,35 +1,43 @@
-import { NgModule } from '@angular/core';
-import { FormArray, FormsModule, NgForm, NgModel, ReactiveFormsModule } from '@angular/forms';
+import { NgModule, } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MycomponentComponent } from './mycomponent/mycomponent.component';
-// import { TodosComponent } from './mycomponent/todos/todos.component';
-import { TdformComponent } from './tdform/tdform.component';
-import { RformsComponent } from './rforms/rforms.component';
+import { FirstComponent } from './first/first.component';
+import { SecondComponent } from './second/second.component';
+import { RouterModule, provideRouter, withComponentInputBinding } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { ErrorComponent } from './error/error.component';
 
+// const appRoute: Routes = [
+//   { path: 'first-component', component: FirstComponent },
+//   { path: 'second-component', component: SecondComponent },
+//   { path: '',   redirectTo: '/first-component', pathMatch: 'full' },
+//   // { path: '**', component: PageNotFoundComponent },  
+// ];
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MycomponentComponent,
-    // TodosComponent,
-    TdformComponent,
-    RformsComponent,
-    
+    FirstComponent,
+    SecondComponent,
+    HomeComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule
-    
-    
-
+     AppRoutingModule,
+     //RouterModule.forRoot(appRoute),
   ],
-  providers: [],
+  providers: [
+    // provideRouter(appRoutes,withComponentInputBinding())
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  // @Input ()
+  // set id(heroId: string){
+  //   this.hero$ = this.service.getHero(heroId);
+  // }
+ }
