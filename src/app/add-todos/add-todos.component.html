@@ -1,0 +1,111 @@
+ 
+
+    <!-- <h4> Add a Todo</h4>
+  <form  #newTodo = "ngForm" (ngSubmit) = "onSubmit(newTodo.value)">
+    <div class="form-group">
+      <label for="title">Todo Title</label>
+      <input type="text"  ngModel id="title" name = "title" placeholder ="Enter the Title">
+    </div>
+
+    <div class="form-group">
+      <label for="desc">Todo Description</label>
+      <input type="text"  ngModel    id="desc" name = "desc" placeholder="Enter the Description">
+    </div><br> --> 
+
+    
+      <!-- <label for="title" >Todo Title</label>
+      <input type="text"  [(ngModel)] = "title" id="title"[ngModelOptions] = "{standalone : true}" >
+   
+
+    
+      <label for="desc">Todo Description</label>
+      <input type="text" [(ngModel)] = "desc"   id="desc"   [ngModelOptions] = "{standalone : true}" >
+   <br> -->
+
+
+
+
+
+    <!-- <div class="form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div> -->
+    
+    <!-- <button type="submit" class="btn btn-primary"   > + Create new Todo</button>
+    
+  </form> -->
+  <!-- <div  class = "text-center"> -->
+
+   <!-- <div class="container mt-4"> -->
+     <h3 class = "text-center">
+         Your Todos list
+    
+      </h3><br>
+
+    <!-- <table class = "reactive-table"> -->
+      <div class = "container">
+        <div class = "row">
+          <div class = "col-12">
+
+          
+      <table class = ng2-responsive-tables>
+      <tr  class = "d-md-table-row">
+          <th>S.NO</th>
+          <th>Title</th>
+          <th> Description</th>
+       </tr>
+
+
+      <tr   class = "d-md-table-row" 
+            *ngIf = "alltodos.length < 1 && !isfetching">
+          <td  colspan="3">Your Todos list is empty</td>
+       </tr> 
+
+
+      
+
+      <tr  class = "d-md-table-row"
+           *ngFor = "let todo of alltodos; index as i">
+          <td> {{i+1}} </td>
+          <td> {{todo.title}}</td>
+          <td> {{ todo.desc}}</td>
+          
+          <!-- <td>
+            <button class = "btn btn-danger" (click)="onDeleteTodos(todo.id)">
+               Delete
+              </button>
+            </td> -->
+            
+              <button class = "btn btn-danger" (click)="onDeleteTodos(todo.id)">
+                 Delete
+                </button>
+           
+        </tr>
+
+
+        <tr class = "d-md-table-row"
+            *ngIf = "isfetching">
+          <td>Loading...</td>
+       </tr>
+
+    <tr  class = "d-md-table-row">
+      <td colspan="3">
+          <button class = "btn btn-sm btn-primary" (click)="onTodosFetch()">
+            fetch data from the http
+          </button>
+      </td>
+      <td>
+          <button class  = "btn btn-sm btn-primary" (click)="onDeleteAllTodos()">
+            Delete all the todos
+          </button>
+      </td>
+  </tr>
+</table>
+
+</div>
+</div>
+</div>
+<!-- </div> -->
+
+<!-- </div> -->
+

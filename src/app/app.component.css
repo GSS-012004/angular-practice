@@ -1,82 +1,37 @@
-
-button {
-	font-size: 100%;
-	margin: 0 2px;
-}
-
-div[ng-reflect-ng-switch], app-unknown-item {
-  margin: .5rem 0;
-  display: block;
-}
-
-#noTrackByCnt,
-#withTrackByCnt {
-	color: darkred;
-	max-width: 450px;
-	margin: 4px;
-}
-
-img {
-	height: 100px;
-}
-
-.box {
-	border: 1px solid black;
-	padding: 6px;
-	max-width: 450px;
-}
-
-.child-div {
-	margin-left: 1em;
-	font-weight: normal;
-}
-
-.context {
-	margin-left: 1em;
-}
-
-.hidden {
-	display: none;
-}
-
-.parent-div {
-	margin-top: 1em;
-	font-weight: bold;
-}
-
-.course {
-	font-weight: bold;
-	font-size: x-large;
-}
-
-.helpful {
-	color: red;
-}
-
-.saveable {
-	color: limegreen;
-}
-
-.study,
-.modified {
-  font-family: "Brush Script MT", cursive;
-  font-size: 2rem;
-}
-
-.toe {
-	margin-left: 1em;
-	font-style: italic;
-}
-
-
-.to-toc {
-	margin-top: 10px;
-	display: block;
-}
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/
+/* Reset some default styles */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Style the navigation bar */
+  nav {
+    background-color: #333; /* Background color */
+  }
+  
+  /* Style the navigation list */
+  nav ul {
+    display: flex; /* Display items horizontally */
+    justify-content: space-around; /* Distribute items evenly */
+    padding: 10px; /* Add spacing around items */
+  }
+  
+  /* Style the navigation list items */
+  nav li {
+    padding: 0 15px; /* Add spacing between items */
+  }
+  
+  /* Style the links in the navigation bar */
+  nav a {
+    text-decoration: none; /* Remove underlines from links */
+    color: #fff; /* Text color */
+    font-weight: bold; /* Bold text */
+    transition: color 0.3s; /* Smooth color transition on hover */
+  }
+  
+  /* Change link color on hover */
+  nav a:hover {
+    color: #ff6600; /* Change color to an accent color on hover */
+  }
+  

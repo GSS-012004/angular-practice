@@ -1,33 +1,42 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms'; // <--- JavaScript import from Angular
+import { BrowserModule } from '@angular/platform-browser';
 
-
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ItemDetailComponent } from './item-detail/item-detail.component';
-import { ItemSwitchComponents } from './item-switch.component';
+// import { MycomponentsComponent } from './mycomponents/mycomponents.component';
+import { TodosComponent } from './mycomponent/todos/todos.component';
+import { TodosItemComponent } from './mycomponent/todos-item/todos-item.component';
+import { AddTodosComponent } from './add-todos/add-todos.component';
+import { FormsModule, NgForm } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TodoContainerComponent } from './todo-container/todo-container.component';
+import { TodoErrorComponent } from './todo-error/todo-error.component';
+import { TodoListModule } from './todo-list/todo-list.module';
 
 
 @NgModule({
-  declarations: [
+  declarations:[
     AppComponent,
-    ItemDetailComponent,
-    ItemSwitchComponents
-  ],
-
+    // TodosComponent,
+    // TodosItemComponent,
+    //  AddTodosComponent,
+    TodoContainerComponent,
+    TodoErrorComponent,
+   
+    ],
+    
   imports: [
     BrowserModule,
-    FormsModule // <--- import into the NgModule
-  ],
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    
+    ],
+    
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/

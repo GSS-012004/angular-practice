@@ -1,0 +1,83 @@
+
+
+<div class="container mt-4">
+  <!-- <div class="container-sm"> -->
+  <!-- <div class = "my-3"> -->
+    <div class = "text-center">
+  <h4> Add a Todo</h4><br>
+ 
+<form  #newTodo = "ngForm" (ngSubmit) = "onSubmit(newTodo.value)">
+  <div class="form-group">
+    <label for="title">Todo Title:</label><br>
+    <input type="text"  ngModel  id="title" name = "title" placeholder ="Enter the Title"><br><br>
+  </div>
+
+  <div class="form-group">
+    <label for="desc">Todo Description:</label><br>
+    <input type="text"  ngModel    id="desc" name = "desc" placeholder="Enter the Description"><br>
+  </div><br>
+
+  
+    <!-- <label for="title" >Todo Title</label>
+    <input type="text"  [(ngModel)] = "title" id="title"[ngModelOptions] = "{standalone : true}" >
+ 
+
+  
+    <label for="desc">Todo Description</label>
+    <input type="text" [(ngModel)] = "desc"   id="desc"   [ngModelOptions] = "{standalone : true}" >
+ <br> -->
+
+
+
+
+
+  <!-- <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div> -->
+  
+  <button type="submit" class="btn btn-primary"> + Create new Todo</button>
+  
+</form></div>
+</div>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <app-add-todos></app-add-todos><br> -->
+<!-- <h4>Your Todos</h4>
+<div *ngIf= "todos.length == 0; else elseBlock">No Todos to display</div>
+<ng-template #elseBlock>
+<div *ngFor ="let todo of todos">
+  <app-todos-item></app-todos-item> 
+  <app-todos></app-todos>
+
+   
+    
+</div ></ng-template> -->
+
+
+ 
+
+
+
+
+
