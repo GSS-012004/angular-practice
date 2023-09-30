@@ -1,0 +1,42 @@
+<h1>hii</h1>
+<div class="container-fluid dashboard-content" #datatable id="content">
+    <div class="page-header">
+        <h2>Fire and Smoke Violations</h2>
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- INPUTS -->
+    <!-- ============================================================== -->
+    <div class="row mx-auto mt-3 mb-3" id="content">
+        <div class="col-xl-2 col-sm-12 col-lg-6 col-xs-12 col-md-6 mb-3">
+            <div class="dl-date-time-picker">
+                <div class="datePickerContainer" (click)="openDatePicker($event)">
+                    <span>
+                         <input type="text" [showCustomRangeLabel]="true" ngxDaterangepickerMd #datepicker
+                            [ranges]="ranges" 
+                            [timePicker]="true" placeholder="Select Date"
+                            [(ngModel)]="selectedMoments" required id="dateInput" class="form-control" />
+                    </span>
+                    <span class="input-group-append">
+                        <button class="ngx-daterangepicker-action btn default" type="button"><fa-icon icon="calendar" class="ngx-daterangepicker-action"(click)="openDatePicker($event)"></fa-icon>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col-xl-2 col-xs-12 col-sm-12 col-md-6 col-lg-6 mb-3">
+            <div class="row">
+                        <p-treeSelect  containerStyleClass="w-full" [ngModelOptions ="{standalone: true}"  containerStyleClass="w-full" [(ngModel)]="selectedItems" (onNodeSelect)="onCameraIdSelect($event)"  [options]="dropdownList|async" placeholder="Select Camera"></p-treeSelect>
+            </div>
+        </div>
+
+
+
+    </div> 
+
+</div>
+
+shdksd8ejd
